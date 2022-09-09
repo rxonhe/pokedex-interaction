@@ -40,7 +40,7 @@ public class PokedexServiceImpl implements IPokedexService {
             Iteration loop -> n
         */
 
-        // a 1 element pokedex is already sorted
+        // a 1 element Pokédex is already sorted
         int pokedexSize = pokedex.getPokemons().length;
         if (pokedexSize <= 1) {
             return pokedex;
