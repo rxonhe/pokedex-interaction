@@ -1,8 +1,7 @@
-package com.choinhet.pokedexinteraction.services.impl;
+package com.choinhet.pokedexinteraction.services;
 
-import com.choinhet.pokedexinteraction.objects.Pokedex;
+import com.choinhet.pokedexinteraction.model.Pokedex;
 
-import com.choinhet.pokedexinteraction.services.IRequestsService;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -15,12 +14,12 @@ import org.springframework.web.client.RestTemplate;
 import java.util.Map;
 
 @Service
-public class RequestsServiceImpl implements IRequestsService {
+public class RequestsService {
     private final RestTemplate restTemplate;
     @Value("#{${project.urlParams}}")
     private Map<String, String> httpParams;
 
-    public RequestsServiceImpl(RestTemplate restTemplate) {
+    public RequestsService(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
     }
 

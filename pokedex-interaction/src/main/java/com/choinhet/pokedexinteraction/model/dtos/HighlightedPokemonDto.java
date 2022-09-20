@@ -1,4 +1,4 @@
-package com.choinhet.pokedexinteraction.objects.dtos;
+package com.choinhet.pokedexinteraction.model.dtos;
 
 public class HighlightedPokemonDto extends PokemonDto {
     private String highlight;

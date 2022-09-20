@@ -1,7 +1,7 @@
 package com.choinhet.pokedexinteraction;
 
-import com.choinhet.pokedexinteraction.objects.Pokedex;
-import com.choinhet.pokedexinteraction.services.IPokedexService;
+import com.choinhet.pokedexinteraction.model.Pokedex;
+import com.choinhet.pokedexinteraction.services.PokedexService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,25 +14,25 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 public class PokedexServiceIntegrationTest {
 
     @Autowired
-    private IPokedexService pokedexService;
+    private PokedexService pokedexService;
 
     @Test
     public void findPokedexByNameTest_thenOK() {
-        Pokedex pokedex = pokedexService.findPokedexByName("pikachu").orElse(null);
+        Pokedex pokedex = pokedexService.findPokedexByName("pikachu");
         assertNotNull(pokedex);
     }
 
     @Test
-    public void findAndSortPokedexTest_thenOK(){
-        Pokedex pokedex = pokedexService.findPokedexByName("pi").orElse(null);
+    public void findAndSortPokedexTest_thenOK() {
+        Pokedex pokedex = pokedexService.findPokedexByName("pi");
         pokedex = pokedexService.sortPokedex(pokedex, "length");
 
-        assertThat(pokedex.getPokemons()[0].getName(), equalTo("tepig"));
+        assertThat(pokedex.getPokemons().get(0).getName(), equalTo("tepig"));
     }
 
     @Test
-    public void noFiltersPokedexTest_thenOK(){
-        Pokedex pokedex = pokedexService.findPokedexByName(null).orElse(null);
+    public void noFiltersPokedexTest_thenOK() {
+        Pokedex pokedex = pokedexService.findPokedexByName(null);
         assertNotNull(pokedex);
     }
 

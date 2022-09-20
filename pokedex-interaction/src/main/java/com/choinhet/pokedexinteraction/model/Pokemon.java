@@ -1,4 +1,4 @@
-package com.choinhet.pokedexinteraction.objects;
+package com.choinhet.pokedexinteraction.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
