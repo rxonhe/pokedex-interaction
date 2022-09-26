@@ -43,14 +43,12 @@ public class PokedexSorter {
     }
 
     private Pokedex mergePokedexes(Pokedex leftSidePokedex, Pokedex rightSidePokedex, PokemonComparator pokemonComparator) {
+
         int leftIndex = 0;
         int rightIndex = 0;
 
-        List<Pokemon> leftResult = leftSidePokedex.getPokemons();
-        List<Pokemon> rightResult = rightSidePokedex.getPokemons();
-
-        final int leftSize = leftResult.size();
-        final int rightSize = rightResult.size();
+        final int leftSize = leftSidePokedex.getPokemons().size();
+        final int rightSize = rightSidePokedex.getPokemons().size();
 
         List<Pokemon> mergedResult = new ArrayList<>();
 
@@ -62,22 +60,22 @@ public class PokedexSorter {
 
             if (pokemonComparator.compare(leftPokemon, rightPokemon)) {
                 // left is supposed to be first
-                mergedResult.add(leftResult.get(leftIndex));
+                mergedResult.add(leftPokemon);
                 leftIndex++;
             } else {
                 // right size is supposed to be first
-                mergedResult.add(rightResult.get(rightIndex));
+                mergedResult.add(rightPokemon);
                 rightIndex++;
             }
         }
         // if there are non merged elements on left list, merge them
         while (leftIndex < leftSize) {
-            mergedResult.add(leftResult.get(leftIndex));
+            mergedResult.add(leftSidePokedex.getPokemons().get(leftIndex));
             leftIndex++;
         }
         // if there are non merged elements on right list, merge them
         while (rightIndex < rightSize) {
-            mergedResult.add(rightResult.get(rightIndex));
+            mergedResult.add(rightSidePokedex.getPokemons().get(rightIndex));
             rightIndex++;
         }
 
