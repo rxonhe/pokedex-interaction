@@ -1,4 +1,4 @@
-package com.choinhet.pokedexinteraction.util;
+package com.choinhet.pokedexinteraction.util.comparator;
 
 import com.choinhet.pokedexinteraction.model.Pokemon;
 

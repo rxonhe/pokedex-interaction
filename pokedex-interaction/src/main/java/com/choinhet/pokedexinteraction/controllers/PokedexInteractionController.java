@@ -4,6 +4,7 @@ import com.choinhet.pokedexinteraction.model.dtos.HighlightedPokedexDto;
 import com.choinhet.pokedexinteraction.model.Pokedex;
 import com.choinhet.pokedexinteraction.model.dtos.PokedexDto;
 import com.choinhet.pokedexinteraction.services.PokedexService;
+import com.choinhet.pokedexinteraction.util.enumUtility.SortOptions;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,7 +22,7 @@ public class PokedexInteractionController {
     @GetMapping("/pokemons")
     public PokedexDto findPokemon(
             @RequestParam(required = false) String name,
-            @RequestParam(required = false) String sort) {
+            @RequestParam(required = false) SortOptions sort) {
 
         Pokedex foundPokedex = pokedexService.findPokedexByName(name);
         if (foundPokedex.getPokemons().isEmpty()){
@@ -33,7 +34,7 @@ public class PokedexInteractionController {
     @GetMapping("/pokemons/highlight")
     public PokedexDto findPokemonWithHighlight(
             @RequestParam(required = false) String name,
-            @RequestParam(required = false) String sort) {
+            @RequestParam(required = false) SortOptions sort) {
 
         Pokedex foundPokedex = pokedexService.findPokedexByName(name);
         if (foundPokedex.getPokemons().isEmpty()){

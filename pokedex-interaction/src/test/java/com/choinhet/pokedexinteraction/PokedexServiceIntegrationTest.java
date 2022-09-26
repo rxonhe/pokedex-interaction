@@ -2,6 +2,7 @@ package com.choinhet.pokedexinteraction;
 
 import com.choinhet.pokedexinteraction.model.Pokedex;
 import com.choinhet.pokedexinteraction.services.PokedexService;
+import com.choinhet.pokedexinteraction.util.enumUtility.SortOptions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -25,7 +26,7 @@ public class PokedexServiceIntegrationTest {
     @Test
     public void findAndSortPokedexTest_thenOK() {
         Pokedex pokedex = pokedexService.findPokedexByName("pi");
-        pokedex = pokedexService.sortPokedex(pokedex, "length");
+        pokedex = pokedexService.sortPokedex(pokedex, SortOptions.LENGTH);
 
         assertThat(pokedex.getPokemons().get(0).getName(), equalTo("tepig"));
     }

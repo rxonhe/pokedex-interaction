@@ -1,13 +1,9 @@
 package com.choinhet.pokedexinteraction.services;
 
 import com.choinhet.pokedexinteraction.model.Pokedex;
-import com.choinhet.pokedexinteraction.model.Pokemon;
-import com.choinhet.pokedexinteraction.util.PokemonComparator;
-import com.choinhet.pokedexinteraction.util.PokemonComparatorFactory;
+import com.choinhet.pokedexinteraction.util.enumUtility.SortOptions;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.stream.Collectors;
 
 
@@ -32,8 +28,8 @@ public class PokedexService {
                 .filter(pokemon -> pokemon.getName().contains(name)).collect(Collectors.toList()));
     }
 
-    public Pokedex sortPokedex(Pokedex pokedex, String sortMethod) {
-        return this.pokedexSorter.sortPokedex(pokedex, sortMethod);
+    public Pokedex sortPokedex(Pokedex pokedex, SortOptions sortOption) {
+        return this.pokedexSorter.sortPokedex(pokedex, sortOption);
     }
 
 }

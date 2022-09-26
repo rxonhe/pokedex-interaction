@@ -2,14 +2,15 @@ package com.choinhet.pokedexinteraction.services;
 
 import com.choinhet.pokedexinteraction.model.Pokedex;
 import com.choinhet.pokedexinteraction.model.Pokemon;
-import com.choinhet.pokedexinteraction.util.PokemonComparator;
-import com.choinhet.pokedexinteraction.util.PokemonComparatorFactory;
+import com.choinhet.pokedexinteraction.util.comparator.PokemonComparator;
+import com.choinhet.pokedexinteraction.util.comparator.PokemonComparatorFactory;
+import com.choinhet.pokedexinteraction.util.enumUtility.SortOptions;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class PokedexSorter {
-    public Pokedex sortPokedex(Pokedex pokedex, String sortMethod) {
+    public Pokedex sortPokedex(Pokedex pokedex, SortOptions sortOption) {
 
         /*
             Time complexity O(n log(n))
@@ -18,7 +19,7 @@ public class PokedexSorter {
         */
 
         List<Pokemon> pokedexResult = pokedex.getPokemons();
-        PokemonComparator pokemonComparator = new PokemonComparatorFactory().getComparator(sortMethod);
+        PokemonComparator pokemonComparator = new PokemonComparatorFactory().getComparator(sortOption);
 
         int pokedexSize = pokedexResult.size();
 
@@ -32,10 +33,10 @@ public class PokedexSorter {
             Pokedex leftSidePokedex = new Pokedex(new ArrayList<>(pokedexResult.subList(0, half)));
             Pokedex rightSidePokedex = new Pokedex(new ArrayList<>(pokedexResult.subList(half, pokedexSize)));
 
-            // recursively sortMethod each half and merge them (both will come to length=1 at some point and will be sorted)
+            // recursively sortOption each half and merge them (both will come to length=1 at some point and will be sorted)
 
-            leftSidePokedex = sortPokedex(leftSidePokedex, sortMethod);
-            rightSidePokedex = sortPokedex(rightSidePokedex, sortMethod);
+            leftSidePokedex = sortPokedex(leftSidePokedex, sortOption);
+            rightSidePokedex = sortPokedex(rightSidePokedex, sortOption);
 
             return this.mergePokedexes(leftSidePokedex, rightSidePokedex, pokemonComparator);
         }
