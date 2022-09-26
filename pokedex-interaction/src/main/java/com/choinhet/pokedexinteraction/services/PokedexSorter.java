@@ -2,9 +2,9 @@ package com.choinhet.pokedexinteraction.services;
 
 import com.choinhet.pokedexinteraction.model.Pokedex;
 import com.choinhet.pokedexinteraction.model.Pokemon;
-import com.choinhet.pokedexinteraction.util.comparator.PokemonComparator;
-import com.choinhet.pokedexinteraction.util.comparator.PokemonComparatorFactory;
-import com.choinhet.pokedexinteraction.util.enumUtility.SortOptions;
+import com.choinhet.pokedexinteraction.services.util.comparator.PokemonComparator;
+import com.choinhet.pokedexinteraction.services.util.comparator.PokemonComparatorFactory;
+import com.choinhet.pokedexinteraction.services.util.enumUtility.SortOptions;
 
 import java.util.ArrayList;
 import java.util.List;

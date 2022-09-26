@@ -4,7 +4,7 @@ import com.choinhet.pokedexinteraction.model.dtos.HighlightedPokedexDto;
 import com.choinhet.pokedexinteraction.model.Pokedex;
 import com.choinhet.pokedexinteraction.model.dtos.PokedexDto;
 import com.choinhet.pokedexinteraction.services.PokedexService;
-import com.choinhet.pokedexinteraction.util.enumUtility.SortOptions;
+import com.choinhet.pokedexinteraction.services.util.enumUtility.SortOptions;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
