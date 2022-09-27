@@ -1,6 +1,6 @@
-package com.choinhet.pokedexinteraction.services.util.comparator;
+package com.choinhet.pokedexinteraction.util.comparator;
 
-import com.choinhet.pokedexinteraction.services.util.enumUtility.SortOptions;
+import com.choinhet.pokedexinteraction.util.enumUtility.SortOptions;
 
 import java.util.HashMap;
 import java.util.Map;

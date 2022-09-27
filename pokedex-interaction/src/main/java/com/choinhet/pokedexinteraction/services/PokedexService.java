@@ -1,7 +1,7 @@
 package com.choinhet.pokedexinteraction.services;
 
 import com.choinhet.pokedexinteraction.model.Pokedex;
-import com.choinhet.pokedexinteraction.services.util.enumUtility.SortOptions;
+import com.choinhet.pokedexinteraction.util.enumUtility.SortOptions;
 import org.springframework.stereotype.Service;
 
 import java.util.stream.Collectors;

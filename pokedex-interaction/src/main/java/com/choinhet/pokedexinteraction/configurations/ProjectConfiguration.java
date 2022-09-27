@@ -1,6 +1,6 @@
 package com.choinhet.pokedexinteraction.configurations;
 import com.choinhet.pokedexinteraction.services.PokedexSorter;
-import com.choinhet.pokedexinteraction.services.util.enumUtility.StringToSortOptions;
+import com.choinhet.pokedexinteraction.util.enumUtility.StringToSortOptions;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.format.FormatterRegistry;
