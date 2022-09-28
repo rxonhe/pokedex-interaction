@@ -29,15 +29,14 @@ public class RequestsService {
         return new HttpEntity<>(headers);
     }
 
-    @Bean
     public Pokedex requestPokedex() {
         String pokedexUrl = httpParams.get("baseUrl") + "?limit=" + httpParams.get("limit");
         HttpEntity<String> entity = getHttpEntity();
         return restTemplate.exchange(
-                pokedexUrl,
-                HttpMethod.GET,
-                entity,
-                Pokedex.class).getBody();
+            pokedexUrl,
+            HttpMethod.GET,
+            entity,
+            Pokedex.class).getBody();
     }
 
 }
