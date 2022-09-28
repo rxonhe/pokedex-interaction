@@ -1,4 +1,5 @@
 package com.choinhet.pokedexinteraction.util.enumUtility;
+import com.choinhet.pokedexinteraction.model.SortOptions;
 import org.springframework.core.convert.converter.Converter;
 
 public class StringToSortOptions implements Converter<String, SortOptions> {

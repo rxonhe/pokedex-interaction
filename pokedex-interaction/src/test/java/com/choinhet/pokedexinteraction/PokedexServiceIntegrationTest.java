@@ -2,7 +2,7 @@ package com.choinhet.pokedexinteraction;
 
 import com.choinhet.pokedexinteraction.model.Pokedex;
 import com.choinhet.pokedexinteraction.services.PokedexService;
-import com.choinhet.pokedexinteraction.util.enumUtility.SortOptions;
+import com.choinhet.pokedexinteraction.model.SortOptions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

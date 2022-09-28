@@ -3,8 +3,7 @@ package com.choinhet.pokedexinteraction.services;
 import com.choinhet.pokedexinteraction.model.Pokedex;
 import com.choinhet.pokedexinteraction.model.Pokemon;
 import com.choinhet.pokedexinteraction.util.comparator.PokemonComparator;
-import com.choinhet.pokedexinteraction.util.comparator.PokemonComparatorFactory;
-import com.choinhet.pokedexinteraction.util.enumUtility.SortOptions;
+import com.choinhet.pokedexinteraction.model.SortOptions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +18,7 @@ public class PokedexSorter {
         */
 
         List<Pokemon> pokedexResult = pokedex.getPokemons();
-        PokemonComparator pokemonComparator = new PokemonComparatorFactory().getComparator(sortOption);
+        PokemonComparator pokemonComparator = sortOption.getPokemonComparator();
 
         int pokedexSize = pokedexResult.size();
 
@@ -30,8 +29,8 @@ public class PokedexSorter {
             // else split it into 2 portions
             int half = pokedexSize / 2;
 
-            Pokedex leftSidePokedex = new Pokedex(new ArrayList<>(pokedexResult.subList(0, half)));
-            Pokedex rightSidePokedex = new Pokedex(new ArrayList<>(pokedexResult.subList(half, pokedexSize)));
+            Pokedex leftSidePokedex = new Pokedex(pokedexResult.subList(0, half));
+            Pokedex rightSidePokedex = new Pokedex(pokedexResult.subList(half, pokedexSize));
 
             // recursively sortOption each half and merge them (both will come to length=1 at some point and will be sorted)
 
