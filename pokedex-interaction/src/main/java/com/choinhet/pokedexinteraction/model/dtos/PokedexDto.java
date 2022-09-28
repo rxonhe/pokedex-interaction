@@ -19,7 +19,7 @@ public class PokedexDto {
     private List<PokemonDto> getPokedexFromResult(List<Pokemon> result) {
         return result.stream()
                 .map(pokemon -> new PokemonDto(pokemon.getName()))
-                .collect(Collectors.toList());
+                .toList();
     }
 
     public List<PokemonDto> getResult() {
